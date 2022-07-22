@@ -1,4 +1,4 @@
-accelerator:
+﻿accelerator:
  displayName: Weather Forcast Web Application
  description: Contains just a README
  iconUrl: https://images.freecreatives.com/wp-content/uploads/2015/05/smiley-559124_640.jpg
@@ -11,7 +11,7 @@ options:
     label: Application Name
     description: Application Name
     inputType: text
-    defaultValue: Sample
+    defaultValue: TanzuWebApp
     required: true
 engine:
   merge:
