@@ -25,7 +25,7 @@ engine:
   - include: [ "TanzuWebApp.csproj" ]
     chain:
     - type: RewritePath
-      rewriteTo: "#applicationName + '.csproj'"
+      rewriteTo: "TanzuWebApp + '.csproj'"
   - include: [ "README.md", "config/*.yaml", "catalog/*.yaml" ]
     chain:
     - type: ReplaceText
