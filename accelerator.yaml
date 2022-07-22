@@ -3,4 +3,32 @@ accelerator:
  description: Contains just a README
  iconUrl: https://images.freecreatives.com/wp-content/uploads/2015/05/smiley-559124_640.jpg
  tags:
- - weatherforcast
+  - dotnet
+  - C#
+  - tanzu
+options:
+  - name: applicationName
+    label: Application Name
+    description: Application Name
+    inputType: text
+    defaultValue: Sample
+    required: true
+engine:
+  merge:
+  - include: [ "**" ]
+    exclude: [ "README.md", "TanzuWebApp.csproj", "config/**", "catalog/**" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: TanzuWebApp
+        with: "#applicationName"
+  - include: [ "TanzuWebApp.csproj" ]
+    chain:
+    - type: RewritePath
+      rewriteTo: "#applicationName + '.csproj'"
+  - include: [ "README.md", "config/*.yaml", "catalog/*.yaml" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: tanzu-web-app
+        with: "#artifactId.toLowerCase()"
