@@ -12,7 +12,7 @@ options:
     description: Application Name
     inputType: text
     defaultValue: TanzuWebApp
-    required: true
+    required: false
 engine:
   merge:
   - include: [ "**" ]
